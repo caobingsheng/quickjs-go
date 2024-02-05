@@ -1,0 +1,1 @@
+mkdir -p deps/libs/windows_386 && cd deps/quickjs && docker run --rm -v $(pwd):/workdir -e CONFIG_WIN32=y -e CONFIG_M32=y -e CROSS_TRIPLE=i686-w64-mingw32 multiarch/crossbuild /bin/bash -c "cd /workdir && make clean && make libquickjs.a " && mv libquickjs.a ../libs/windows_386
